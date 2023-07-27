@@ -5,3 +5,4 @@ Pillow
 tensorflow
 timm
 gradio_client
+gunicorn
