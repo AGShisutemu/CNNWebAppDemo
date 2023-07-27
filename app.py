@@ -17,14 +17,14 @@ from flask import (
 )
 
 # tensorflow
-import tensorflow as tf
-from tensorflow.keras.applications.imagenet_utils import (
-    preprocess_input,
-    decode_predictions,
-)
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
+# import tensorflow as tf
+# from tensorflow.keras.applications.imagenet_utils import (
+#     preprocess_input,
+#     decode_predictions,
+# )
+# from tensorflow.keras.models import load_model
+# from tensorflow.keras.preprocessing import image
+# from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
 from gradio_client import Client
 import json
 
@@ -37,7 +37,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
 
 def classifyImage():
-    model = MobileNetV2(weights="imagenet")
+    # model = MobileNetV2(weights="imagenet")
 
     # Loading the pretrained model
     # model_json = open(Model_json, 'r')
@@ -46,23 +46,23 @@ def classifyImage():
     # model = model_from_json(loaded_model_json)
     # model.load_weights(Model_weigths)
 
-    return model
+    return None
 
 
-def model_predict(img, model):
-    img = img.resize((224, 224))
+# def model_predict(img, model):
+#     img = img.resize((224, 224))
 
-    # Preprocessing the image
-    x = image.img_to_array(img)
-    # x = np.true_divide(x, 255)
-    x = np.expand_dims(x, axis=0)
+#     # Preprocessing the image
+#     x = image.img_to_array(img)
+#     # x = np.true_divide(x, 255)
+#     x = np.expand_dims(x, axis=0)
 
-    # Be careful how your trained model deals with the input
-    # otherwise, it won't make correct prediction!
-    x = preprocess_input(x, mode="tf")
+#     # Be careful how your trained model deals with the input
+#     # otherwise, it won't make correct prediction!
+#     x = preprocess_input(x, mode="tf")
 
-    preds = model.predict(x)
-    return preds
+#     preds = model.predict(x)
+#     return preds
 
 
 @app.route("/", methods=["GET"])
