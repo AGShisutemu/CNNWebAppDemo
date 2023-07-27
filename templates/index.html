@@ -21,21 +21,21 @@
     <input
       type="button"
       value="Submit"
-      class="button"
+      class="btn btn-default"
       onclick="submitImage();"
     />
-    <input type="button" value="Clear" class="button" onclick="clearImage();" />
+    <input type="button" value="Clear" class="btn btn-default" onclick="clearImage();" />
   </div>
 
   <div id="image-box">
-    <img id="image-display" />
+    <img id="image-display" hidden/>
     <div id="pred-result" class="hidden"></div>
     <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
       <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
     </svg>
   </div>
 
-  <code id="json_response"></code>
+  <code id="json_response">JSON RESPONSE: </code>
 </div>
 
 {% endblock %}

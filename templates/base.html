@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Image Classifier</title>
+    <title>CNN Web App Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" />
+    <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}" /> -->
   </head>
 
-  <body>
-    {% block content %}{% endblock %}
+  <body id="content" class="terminal">
+    <div class="container components components-grid" style="margin-top: 1em;">
+      <fieldset>
+        <legend>CNN Web App Demo</legend>
+        {% block content %}{% endblock %}
+        
+      </fieldset>
+      <section>
+        <p style="font-size: 8px;">
+          Created by Elijah Abgao and Justin Ledesma @ 2023; Powered by
+          Spite<sup>TM</sup>.
+        </p>
+      </section>
+    </div>
   </body>
+  
 
   <footer>
     <script src="{{ url_for('static',filename='main.js') }}"></script>
