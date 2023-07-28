@@ -83,9 +83,9 @@ def predict():
     client = Client("https://feisarx86-timm-inception-v3-tv-in1k.hf.space/")
     if request.method == "POST":
         save_base64_to_image(request.json, "test_image.jpg")
-        print(f"{request.url_root}{UPLOAD_FOLDER}/test_image.jpg")
+        print(f"{request.url_root}{UPLOAD_FOLDER}test_image.jpg")
         result = client.predict(
-            f"{request.url_root}{UPLOAD_FOLDER}/test_image.jpg",  # str (filepath or URL to image) in 'Input Image' Image component
+            f"{request.url_root}{UPLOAD_FOLDER}test_image.jpg",  # str (filepath or URL to image) in 'Input Image' Image component
             api_name="/predict",
         )
         # # Get the image from post request
