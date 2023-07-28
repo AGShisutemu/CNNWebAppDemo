@@ -2,7 +2,6 @@ Flask
 h5py
 numpy
 Pillow
-# tensorflow
 timm
 gradio_client
 gunicorn
